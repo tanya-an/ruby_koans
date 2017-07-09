@@ -14,9 +14,18 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+	if (a + b) <= c  || (a + c) <= b || (c + b) <= a then
+		raise TriangleError
+	end
+	case [a, b, c].uniq.size
+		when 1 then :equilateral
+		when 2 then :isosceles 
+		when 3 then :scalene 
+	end	
 end
-
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
 end
+
+
+ 
